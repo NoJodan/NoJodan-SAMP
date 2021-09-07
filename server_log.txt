@@ -1,0 +1,95 @@
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[16:12:35] filterscripts = ""  (string)
+[16:12:35] 
+[16:12:35] Server Plugins
+[16:12:35] --------------
+[16:12:35]  Loading plugin: sscanf
+[16:12:35] 
+
+[16:12:35]  ===============================
+
+[16:12:35]       sscanf plugin loaded.     
+
+[16:12:35]          Version:  2.8.3        
+
+[16:12:35]   (c) 2018 Alex "Y_Less" Cole  
+
+[16:12:35]  ===============================
+
+[16:12:35]   Loaded.
+[16:12:35]  Loading plugin: streamer
+[16:12:35] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[16:12:35]   Loaded.
+[16:12:35]  Loaded 2 plugins.
+
+[16:12:35] I couldn't load any gamemode scripts. Please verify your server.cfg
+[16:12:35] It needs a gamemode0 line at the very least.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[16:28:19] filterscripts = ""  (string)
+[16:28:19] 
+[16:28:19] Server Plugins
+[16:28:19] --------------
+[16:28:19]  Loading plugin: sscanf
+[16:28:19] 
+
+[16:28:19]  ===============================
+
+[16:28:19]       sscanf plugin loaded.     
+
+[16:28:19]          Version:  2.8.3        
+
+[16:28:19]   (c) 2018 Alex "Y_Less" Cole  
+
+[16:28:19]  ===============================
+
+[16:28:19]   Loaded.
+[16:28:19]  Loading plugin: streamer
+[16:28:19] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[16:28:19]   Loaded.
+[16:28:19]  Loaded 2 plugins.
+
+[16:28:19] 
+[16:28:19] Filterscripts
+[16:28:19] ---------------
+[16:28:19]   Loaded 0 filterscripts.
+
+[16:28:19]  
+[16:28:19]  
+[16:28:19]  
+[16:28:19]  ======================================= 
+[16:28:19]  |                                     | 
+[16:28:19]  |        YSI version 3.09.0684        | 
+[16:28:19]  |        By Alex "Y_Less" Cole        | 
+[16:28:19]  |                                     | 
+[16:28:19]  ======================================= 
+[16:28:19]  
+[16:28:19]  
+[16:28:19]  
+[16:28:19] 
+----------------------------------
+[16:28:19]  Iniciando GM test de Roleplay.
+[16:28:19] ----------------------------------
+
+[16:28:19] Number of vehicle models: 0
