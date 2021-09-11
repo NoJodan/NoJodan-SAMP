@@ -71,7 +71,9 @@ enum PlayerData
 	Float:PosA,
 	Skin,
 	VirtualW,
-	Interior
+	Interior,
+	TriesL,
+	TriesR
 };
 new pInfo[MAX_PLAYERS][PlayerData];
 
@@ -95,7 +97,6 @@ public LoadUser_data(playerid, name[], value[])
 	INI_Int("Skin", pInfo[playerid][Skin]);
 	INI_Int("VirtualW", pInfo[playerid][VirtualW]);
 	INI_Int("Interior", pInfo[playerid][Interior]);
-
 	return 1;
 }
 
@@ -143,7 +144,6 @@ public OnGameModeInit()
 	SetWeather(2);
 	SetWorldTime(11);
 	UsePlayerPedAnims();
-	
 	return 1;
 }
 
@@ -165,41 +165,42 @@ public OnPlayerConnect(playerid)
 	{
 		ShowPlayerDialog(playerid, RegisterDialog, DIALOG_STYLE_INPUT, ""COLOR_WHITE_T"Registrarse", ""COLOR_WHITE_T"Escribe una contrasena para crear tu cuenta:", "Siguiente", "Salir");
 	}
-
 	return 1;
 }
 
 //Cuando un usuario se desconecta
 public OnPlayerDisconnect(playerid, reason)
 {
-	//Obtenemos todos los datos del usuario para posterior guardarlos en el archivo ini
-	GetPlayerHealth(playerid, pInfo[playerid][Health]);
-	GetPlayerArmour(playerid, pInfo[playerid][Armour]);
-	pInfo[playerid][Money] = GetPlayerMoney(playerid);
-	GetPlayerPos(playerid, pInfo[playerid][PosX], pInfo[playerid][PosY], pInfo[playerid][PosZ]);
-	pInfo[playerid][VirtualW] = GetPlayerVirtualWorld(playerid);
-	pInfo[playerid][Interior] = GetPlayerInterior(playerid);
-	pInfo[playerid][Skin] = GetPlayerSkin(playerid);
+	if(fexist(UserPath(playerid)))
+	{
+		//Obtenemos todos los datos del usuario para posterior guardarlos en el archivo ini
+		GetPlayerHealth(playerid, pInfo[playerid][Health]);
+		GetPlayerArmour(playerid, pInfo[playerid][Armour]);
+		pInfo[playerid][Money] = GetPlayerMoney(playerid);
+		GetPlayerPos(playerid, pInfo[playerid][PosX], pInfo[playerid][PosY], pInfo[playerid][PosZ]);
+		pInfo[playerid][VirtualW] = GetPlayerVirtualWorld(playerid);
+		pInfo[playerid][Interior] = GetPlayerInterior(playerid);
+		pInfo[playerid][Skin] = GetPlayerSkin(playerid);
 
-	new INI:File = INI_Open(UserPath(playerid));
-	INI_SetTag(File, "data");
-	INI_WriteInt(File, "Money", pInfo[playerid][Money]);
-	INI_WriteFloat(File, "Health", pInfo[playerid][Health]);
-	INI_WriteFloat(File, "Armour", pInfo[playerid][Armour]);
-	INI_WriteInt(File, "Sex", pInfo[playerid][Sex]);
-	INI_WriteInt(File, "Age", pInfo[playerid][Age]);
-	INI_WriteInt(File, "VIP", pInfo[playerid][VIP]);
-	INI_WriteInt(File, "Admin", pInfo[playerid][Admin]);
-	INI_WriteInt(File, "OnDuty", 0);
-	INI_WriteFloat(File, "PosX", pInfo[playerid][PosX]);
-	INI_WriteFloat(File, "PosY", pInfo[playerid][PosY]);
-	INI_WriteFloat(File, "PosZ", pInfo[playerid][PosZ]);
-	INI_WriteFloat(File, "PosA", pInfo[playerid][PosA]);
-	INI_WriteInt(File, "Skin", pInfo[playerid][Skin]);
-	INI_WriteInt(File, "VirtualW", pInfo[playerid][VirtualW]);
-	INI_WriteInt(File, "Interior", pInfo[playerid][Interior]);
-	INI_Close(File);
-
+		new INI:File = INI_Open(UserPath(playerid));
+		INI_SetTag(File, "data");
+		INI_WriteInt(File, "Money", pInfo[playerid][Money]);
+		INI_WriteFloat(File, "Health", pInfo[playerid][Health]);
+		INI_WriteFloat(File, "Armour", pInfo[playerid][Armour]);
+		INI_WriteInt(File, "Sex", pInfo[playerid][Sex]);
+		INI_WriteInt(File, "Age", pInfo[playerid][Age]);
+		INI_WriteInt(File, "VIP", pInfo[playerid][VIP]);
+		INI_WriteInt(File, "Admin", pInfo[playerid][Admin]);
+		INI_WriteInt(File, "OnDuty", 0);
+		INI_WriteFloat(File, "PosX", pInfo[playerid][PosX]);
+		INI_WriteFloat(File, "PosY", pInfo[playerid][PosY]);
+		INI_WriteFloat(File, "PosZ", pInfo[playerid][PosZ]);
+		INI_WriteFloat(File, "PosA", pInfo[playerid][PosA]);
+		INI_WriteInt(File, "Skin", pInfo[playerid][Skin]);
+		INI_WriteInt(File, "VirtualW", pInfo[playerid][VirtualW]);
+		INI_WriteInt(File, "Interior", pInfo[playerid][Interior]);
+		INI_Close(File);
+	}
 	return 1;
 }
 
@@ -213,30 +214,44 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			if(!response) return Kick(playerid);
 			if(response)
 			{
-				if(!strlen(inputtext)) return ShowPlayerDialog(playerid, RegisterDialog, DIALOG_STYLE_INPUT, ""COLOR_WHITE_T"Registro",""COLOR_RED_T"Has ingresado una contrasena invalida.\n"COLOR_WHITE_T"Escribe una contrasena valida para registrarse:","Siguiente","Salir");
-				new INI:File = INI_Open(UserPath(playerid));
-				INI_SetTag(File, "data");
-				INI_WriteInt(File, "Password", udb_hash(inputtext));
-				INI_WriteInt(File, "Money", 15000);
-				INI_WriteFloat(File, "Health", 100);
-				INI_WriteFloat(File, "Armour", 0);
-				INI_WriteInt(File, "Sex", 1);
-				INI_WriteInt(File, "Age", 20);
-				INI_WriteInt(File, "VIP", 0);
-				INI_WriteInt(File, "Admin", 0);
-				INI_WriteInt(File, "OnDuty", 0);
-				INI_WriteFloat(File, "PosX", -2016.4399);
-				INI_WriteFloat(File, "PosY", -79.77140);
-				INI_WriteFloat(File, "PosZ", 35.3203);
-				INI_WriteFloat(File, "PosA", 0);
-				INI_WriteInt(File, "Skin", 60);
-				INI_WriteInt(File, "VirtualW", 0);
-				INI_WriteInt(File, "Interior", 0);
-				INI_Close(File);
+				if(!strlen(inputtext))
+				{
+					if(pInfo[playerid][TriesR] == 3)
+					{
+						SendClientMessage(playerid, COLOR_GREEN, ""COLOR_RED_T"[ERROR] Demasiados intentos de registro. (kick)");
+						pInfo[playerid][TriesR] = 0;
+						SetTimerEx("KickInTime", 200, false, "i", playerid);
+					}
 
-				ShowPlayerDialog(playerid, RegisterAge, DIALOG_STYLE_INPUT, ""COLOR_WHITE_T"Edad",""COLOR_WHITE_T"Ahora necesitamos que nos digas tu edad:", "Siguiente", "Cancelar");
+					SendClientMessage(playerid, COLOR_GREEN, "No input");
+					pInfo[playerid][TriesR]++;
+					return ShowPlayerDialog(playerid, RegisterDialog, DIALOG_STYLE_INPUT, ""COLOR_WHITE_T"Registro",""COLOR_RED_T"Has ingresado una contrasena invalida.\n"COLOR_WHITE_T"Escribe una contrasena valida para registrarse:","Siguiente","Salir");
+				}
+				else
+				{
+					new INI:File = INI_Open(UserPath(playerid));
+					INI_SetTag(File, "data");
+					INI_WriteInt(File, "Password", udb_hash(inputtext));
+					INI_WriteInt(File, "Money", 15000);
+					INI_WriteFloat(File, "Health", 100);
+					INI_WriteFloat(File, "Armour", 0);
+					INI_WriteInt(File, "Sex", 1);
+					INI_WriteInt(File, "Age", 20);
+					INI_WriteInt(File, "VIP", 0);
+					INI_WriteInt(File, "Admin", 0);
+					INI_WriteInt(File, "OnDuty", 0);
+					INI_WriteFloat(File, "PosX", -2016.4399);
+					INI_WriteFloat(File, "PosY", -79.77140);
+					INI_WriteFloat(File, "PosZ", 35.3203);
+					INI_WriteFloat(File, "PosA", 0);
+					INI_WriteInt(File, "Skin", 60);
+					INI_WriteInt(File, "VirtualW", 0);
+					INI_WriteInt(File, "Interior", 0);
+					INI_Close(File);
 
-				return 1;
+					ShowPlayerDialog(playerid, RegisterAge, DIALOG_STYLE_INPUT, ""COLOR_WHITE_T"Edad",""COLOR_WHITE_T"Ahora necesitamos que nos digas tu edad:", "Siguiente", "Cancelar");
+					return 1;
+				}
 			}
 		}
 		case LoginDialog:
@@ -254,14 +269,21 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					SetPlayerInterior(playerid, pInfo[playerid][Interior]);
 					ShowPlayerDialog(playerid, SuccessLogin, DIALOG_STYLE_MSGBOX, ""COLOR_WHITE_T"Listo", ""COLOR_GREEN_T"Has iniciado sesion correctamente.", "Entendido", "");
 					SetSpawnInfo(playerid, 0, pInfo[playerid][Skin], pInfo[playerid][PosX], pInfo[playerid][PosY], pInfo[playerid][PosZ], pInfo[playerid][PosA], 0, 0, 0, 0, 0, 0);
-					SetPlayerSkin(playerid, pInfo[playerid][Skin]);
 					SpawnPlayer(playerid);
+					SetPlayerSkin(playerid, pInfo[playerid][Skin]);
 				}
 				else
 				{
+					if(pInfo[playerid][TriesL] == 3)
+					{
+						SendClientMessage(playerid, COLOR_GREEN, ""COLOR_RED_T"[ERROR] Demasiados intentos de ingreso. (Kick)");
+						pInfo[playerid][TriesL] = 0;
+						SetTimerEx("KickInTime", 200, false, "i", playerid);
+					}
+
+					pInfo[playerid][TriesL]++;
 					ShowPlayerDialog(playerid, LoginDialog, DIALOG_STYLE_INPUT, ""COLOR_WHITE_T"Ingreso", ""COLOR_RED_T"Colocaste una contrasena incorrecta.\nEscribe tu contrasena para ingresar:", "Ingresar", "Salir");
 				}
-
 				return 1;
 			}
 		}
@@ -270,11 +292,21 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			if(!response) return Kick(playerid);
 			if(response)
 			{
-				if(strval(inputtext) < 15 || strval(inputtext) > 99) return ShowPlayerDialog(playerid, RegisterAge, DIALOG_STYLE_INPUT, ""COLOR_WHITE_T"Edad",""COLOR_RED_T"Ingresaste una edad no permitida, debe ser mayor que 15 y menor de 99:", "Siguiente", "Cancelar");
+				if(strval(inputtext) < 15 || strval(inputtext) > 99)
+				{
+					if(pInfo[playerid][TriesR] == 3)
+					{
+						SendClientMessage(playerid, COLOR_GREEN, ""COLOR_RED_T"[ERROR] Demasiados intentos de registro. (kick)");
+						pInfo[playerid][TriesR] = 0;
+						SetTimerEx("KickInTime", 200, false, "i", playerid);
+					}
+
+					pInfo[playerid][TriesR]++;
+					return ShowPlayerDialog(playerid, RegisterAge, DIALOG_STYLE_INPUT, ""COLOR_WHITE_T"Edad",""COLOR_RED_T"Ingresaste una edad no permitida, debe ser mayor que 15 y menor de 99:", "Siguiente", "Cancelar");
+				}
 
 				pInfo[playerid][Age] = strval(inputtext);
 				ShowPlayerDialog(playerid, RegisterSex, DIALOG_STYLE_MSGBOX, ""COLOR_WHITE_T"Sexo",""COLOR_WHITE_T"Ahora necesitamos que nos digas tu genero:", "Hombre", "Mujer");
-				
 				return 1;
 			}
 		}
@@ -302,11 +334,9 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				GivePlayerMoney(playerid, 15000);
 				SpawnPlayer(playerid);
 			}
-
 			return 1;
 		}
 	}
-
 	return 1;
 }
 
@@ -520,6 +550,12 @@ GetPlayerNameEx(playerid)
 	GetPlayerName(playerid, sz_playerName, MAX_PLAYER_NAME);
 	while ((i_pos = strfind(sz_playerName, "_", false, i_pos)) != -1) sz_playerName[i_pos] = ' ';
 	return sz_playerName;
+}
+
+forward KickInTime(playerid);
+public KickInTime(playerid)
+{
+	return Kick(playerid);
 }
 
 //****************************Test Roleplay****************************

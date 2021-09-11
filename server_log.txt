@@ -595,3 +595,594 @@ v0.3.7-R2, (C)2005-2015 SA-MP Team
 [17:43:38] [CMD] [Lawliet Salvatore]: /adminduty
 [17:43:40] [CMD] [Lawliet Salvatore]: /adminoffduty
 [17:43:49] [part] Lawliet_Salvatore has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:15:09] filterscripts = ""  (string)
+[18:15:09] 
+[18:15:09] Server Plugins
+[18:15:09] --------------
+[18:15:09]  Loading plugin: sscanf
+[18:15:09] 
+
+[18:15:09]  ===============================
+
+[18:15:09]       sscanf plugin loaded.     
+
+[18:15:09]          Version:  2.8.3        
+
+[18:15:09]   (c) 2018 Alex "Y_Less" Cole  
+
+[18:15:09]  ===============================
+
+[18:15:09]   Loaded.
+[18:15:09]  Loading plugin: streamer
+[18:15:09] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[18:15:09]   Loaded.
+[18:15:09]  Loaded 2 plugins.
+
+[18:15:09] 
+[18:15:09] Filterscripts
+[18:15:09] ---------------
+[18:15:09]   Loaded 0 filterscripts.
+
+[18:15:09]  
+[18:15:09]  
+[18:15:09]  
+[18:15:09]  ======================================= 
+[18:15:09]  |                                     | 
+[18:15:09]  |        YSI version 3.09.0684        | 
+[18:15:09]  |        By Alex "Y_Less" Cole        | 
+[18:15:09]  |                                     | 
+[18:15:09]  ======================================= 
+[18:15:09]  
+[18:15:09]  
+[18:15:09]  
+[18:15:09] 
+----------------------------------
+[18:15:09]  Iniciando GM test de Roleplay.
+[18:15:09] ----------------------------------
+
+[18:15:09] Number of vehicle models: 0
+[18:15:36] [connection] 127.0.0.1:62666 requests connection cookie.
+[18:15:37] [connection] incoming connection: 127.0.0.1:62666 id: 0
+[18:15:37] [join] Lawliet_Salvatore has joined the server (0:127.0.0.1)
+[18:15:58] [part] Lawliet_Salvatore has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:20:13] filterscripts = ""  (string)
+[18:20:13] 
+[18:20:13] Server Plugins
+[18:20:13] --------------
+[18:20:13]  Loading plugin: sscanf
+[18:20:13] 
+
+[18:20:13]  ===============================
+
+[18:20:13]       sscanf plugin loaded.     
+
+[18:20:13]          Version:  2.8.3        
+
+[18:20:13]   (c) 2018 Alex "Y_Less" Cole  
+
+[18:20:13]  ===============================
+
+[18:20:13]   Loaded.
+[18:20:13]  Loading plugin: streamer
+[18:20:13] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[18:20:13]   Loaded.
+[18:20:13]  Loaded 2 plugins.
+
+[18:20:13] 
+[18:20:13] Filterscripts
+[18:20:13] ---------------
+[18:20:13]   Loaded 0 filterscripts.
+
+[18:20:13]  
+[18:20:13]  
+[18:20:13]  
+[18:20:13]  ======================================= 
+[18:20:13]  |                                     | 
+[18:20:13]  |        YSI version 3.09.0684        | 
+[18:20:13]  |        By Alex "Y_Less" Cole        | 
+[18:20:13]  |                                     | 
+[18:20:13]  ======================================= 
+[18:20:13]  
+[18:20:13]  
+[18:20:13]  
+[18:20:13] 
+----------------------------------
+[18:20:13]  Iniciando GM test de Roleplay.
+[18:20:13] ----------------------------------
+
+[18:20:13] Number of vehicle models: 0
+[18:20:52] [connection] 127.0.0.1:61775 requests connection cookie.
+[18:20:53] [connection] incoming connection: 127.0.0.1:61775 id: 0
+[18:20:53] [join] Lawliet_Salvatore has joined the server (0:127.0.0.1)
+[18:21:04] [part] Lawliet_Salvatore has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:23:27] filterscripts = ""  (string)
+[18:23:27] 
+[18:23:27] Server Plugins
+[18:23:27] --------------
+[18:23:27]  Loading plugin: sscanf
+[18:23:27] 
+
+[18:23:27]  ===============================
+
+[18:23:27]       sscanf plugin loaded.     
+
+[18:23:27]          Version:  2.8.3        
+
+[18:23:27]   (c) 2018 Alex "Y_Less" Cole  
+
+[18:23:27]  ===============================
+
+[18:23:27]   Loaded.
+[18:23:27]  Loading plugin: streamer
+[18:23:27] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[18:23:27]   Loaded.
+[18:23:27]  Loaded 2 plugins.
+
+[18:23:27] 
+[18:23:27] Filterscripts
+[18:23:27] ---------------
+[18:23:27]   Loaded 0 filterscripts.
+
+[18:23:27]  
+[18:23:27]  
+[18:23:27]  
+[18:23:27]  ======================================= 
+[18:23:27]  |                                     | 
+[18:23:27]  |        YSI version 3.09.0684        | 
+[18:23:27]  |        By Alex "Y_Less" Cole        | 
+[18:23:27]  |                                     | 
+[18:23:27]  ======================================= 
+[18:23:27]  
+[18:23:27]  
+[18:23:27]  
+[18:23:27] 
+----------------------------------
+[18:23:27]  Iniciando GM test de Roleplay.
+[18:23:27] ----------------------------------
+
+[18:23:27] Number of vehicle models: 0
+[18:23:52] [connection] 127.0.0.1:53360 requests connection cookie.
+[18:23:53] [connection] incoming connection: 127.0.0.1:53360 id: 0
+[18:23:53] [join] Lawliet_Salvatore has joined the server (0:127.0.0.1)
+[18:24:08] [part] Lawliet_Salvatore has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:28:18] filterscripts = ""  (string)
+[18:28:18] 
+[18:28:18] Server Plugins
+[18:28:18] --------------
+[18:28:18]  Loading plugin: sscanf
+[18:28:18] 
+
+[18:28:18]  ===============================
+
+[18:28:18]       sscanf plugin loaded.     
+
+[18:28:18]          Version:  2.8.3        
+
+[18:28:18]   (c) 2018 Alex "Y_Less" Cole  
+
+[18:28:18]  ===============================
+
+[18:28:18]   Loaded.
+[18:28:18]  Loading plugin: streamer
+[18:28:18] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[18:28:18]   Loaded.
+[18:28:18]  Loaded 2 plugins.
+
+[18:28:18] 
+[18:28:18] Filterscripts
+[18:28:18] ---------------
+[18:28:18]   Loaded 0 filterscripts.
+
+[18:28:18]  
+[18:28:18]  
+[18:28:18]  
+[18:28:18]  ======================================= 
+[18:28:18]  |                                     | 
+[18:28:18]  |        YSI version 3.09.0684        | 
+[18:28:18]  |        By Alex "Y_Less" Cole        | 
+[18:28:18]  |                                     | 
+[18:28:18]  ======================================= 
+[18:28:18]  
+[18:28:18]  
+[18:28:18]  
+[18:28:18] 
+----------------------------------
+[18:28:18]  Iniciando GM test de Roleplay.
+[18:28:18] ----------------------------------
+
+[18:28:18] Number of vehicle models: 0
+[18:28:45] [connection] 127.0.0.1:56752 requests connection cookie.
+[18:28:46] [connection] incoming connection: 127.0.0.1:56752 id: 0
+[18:28:46] [join] Lawliet_Salvatore has joined the server (0:127.0.0.1)
+[18:28:59] [part] Lawliet_Salvatore has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:31:30] filterscripts = ""  (string)
+[18:31:30] 
+[18:31:30] Server Plugins
+[18:31:30] --------------
+[18:31:30]  Loading plugin: sscanf
+[18:31:30] 
+
+[18:31:30]  ===============================
+
+[18:31:30]       sscanf plugin loaded.     
+
+[18:31:30]          Version:  2.8.3        
+
+[18:31:30]   (c) 2018 Alex "Y_Less" Cole  
+
+[18:31:30]  ===============================
+
+[18:31:30]   Loaded.
+[18:31:30]  Loading plugin: streamer
+[18:31:30] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[18:31:30]   Loaded.
+[18:31:30]  Loaded 2 plugins.
+
+[18:31:30] 
+[18:31:30] Filterscripts
+[18:31:30] ---------------
+[18:31:30]   Loaded 0 filterscripts.
+
+[18:31:30]  
+[18:31:30]  
+[18:31:30]  
+[18:31:30]  ======================================= 
+[18:31:30]  |                                     | 
+[18:31:30]  |        YSI version 3.09.0684        | 
+[18:31:30]  |        By Alex "Y_Less" Cole        | 
+[18:31:30]  |                                     | 
+[18:31:30]  ======================================= 
+[18:31:30]  
+[18:31:30]  
+[18:31:30]  
+[18:31:30] 
+----------------------------------
+[18:31:30]  Iniciando GM test de Roleplay.
+[18:31:30] ----------------------------------
+
+[18:31:30] Number of vehicle models: 0
+[18:31:52] [connection] 127.0.0.1:61161 requests connection cookie.
+[18:31:53] [connection] incoming connection: 127.0.0.1:61161 id: 0
+[18:31:54] [join] Lawliet_Salvatore has joined the server (0:127.0.0.1)
+[18:32:07] [part] Lawliet_Salvatore has left the server (0:2)
+[18:32:23] --- Server Shutting Down.
+[18:32:23] 
+
+[18:32:23]  ===============================
+
+[18:32:23]      sscanf plugin unloaded.    
+
+[18:32:23]  ===============================
+
+[18:32:23] 
+
+*** Streamer Plugin v2.9.5 by Incognito unloaded ***
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:34:01] filterscripts = ""  (string)
+[18:34:01] 
+[18:34:01] Server Plugins
+[18:34:01] --------------
+[18:34:01]  Loading plugin: sscanf
+[18:34:01] 
+
+[18:34:01]  ===============================
+
+[18:34:01]       sscanf plugin loaded.     
+
+[18:34:01]          Version:  2.8.3        
+
+[18:34:01]   (c) 2018 Alex "Y_Less" Cole  
+
+[18:34:01]  ===============================
+
+[18:34:01]   Loaded.
+[18:34:01]  Loading plugin: streamer
+[18:34:01] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[18:34:01]   Loaded.
+[18:34:01]  Loaded 2 plugins.
+
+[18:34:01] 
+[18:34:01] Filterscripts
+[18:34:01] ---------------
+[18:34:01]   Loaded 0 filterscripts.
+
+[18:34:01]  
+[18:34:01]  
+[18:34:01]  
+[18:34:01]  ======================================= 
+[18:34:01]  |                                     | 
+[18:34:01]  |        YSI version 3.09.0684        | 
+[18:34:01]  |        By Alex "Y_Less" Cole        | 
+[18:34:01]  |                                     | 
+[18:34:01]  ======================================= 
+[18:34:01]  
+[18:34:01]  
+[18:34:01]  
+[18:34:01] 
+----------------------------------
+[18:34:01]  Iniciando GM test de Roleplay.
+[18:34:01] ----------------------------------
+
+[18:34:01] Number of vehicle models: 0
+[18:34:24] [connection] 127.0.0.1:53324 requests connection cookie.
+[18:34:25] [connection] incoming connection: 127.0.0.1:53324 id: 0
+[18:34:25] [join] Lawliet_Salvatore has joined the server (0:127.0.0.1)
+[18:34:33] [part] Lawliet_Salvatore has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:39:27] filterscripts = ""  (string)
+[18:39:27] 
+[18:39:27] Server Plugins
+[18:39:27] --------------
+[18:39:27]  Loading plugin: sscanf
+[18:39:27] 
+
+[18:39:27]  ===============================
+
+[18:39:27]       sscanf plugin loaded.     
+
+[18:39:27]          Version:  2.8.3        
+
+[18:39:27]   (c) 2018 Alex "Y_Less" Cole  
+
+[18:39:27]  ===============================
+
+[18:39:27]   Loaded.
+[18:39:27]  Loading plugin: streamer
+[18:39:27] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[18:39:27]   Loaded.
+[18:39:27]  Loaded 2 plugins.
+
+[18:39:28] 
+[18:39:28] Filterscripts
+[18:39:28] ---------------
+[18:39:28]   Loaded 0 filterscripts.
+
+[18:39:28]  
+[18:39:28]  
+[18:39:28]  
+[18:39:28]  ======================================= 
+[18:39:28]  |                                     | 
+[18:39:28]  |        YSI version 3.09.0684        | 
+[18:39:28]  |        By Alex "Y_Less" Cole        | 
+[18:39:28]  |                                     | 
+[18:39:28]  ======================================= 
+[18:39:28]  
+[18:39:28]  
+[18:39:28]  
+[18:39:28] 
+----------------------------------
+[18:39:28]  Iniciando GM test de Roleplay.
+[18:39:28] ----------------------------------
+
+[18:39:28] Number of vehicle models: 0
+[18:40:00] [connection] 127.0.0.1:58037 requests connection cookie.
+[18:40:01] [connection] incoming connection: 127.0.0.1:58037 id: 0
+[18:40:02] [join] Lawliet_Salvatore has joined the server (0:127.0.0.1)
+[18:40:19] [part] Lawliet_Salvatore has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:42:36] filterscripts = ""  (string)
+[18:42:36] 
+[18:42:36] Server Plugins
+[18:42:36] --------------
+[18:42:36]  Loading plugin: sscanf
+[18:42:36] 
+
+[18:42:36]  ===============================
+
+[18:42:36]       sscanf plugin loaded.     
+
+[18:42:36]          Version:  2.8.3        
+
+[18:42:36]   (c) 2018 Alex "Y_Less" Cole  
+
+[18:42:36]  ===============================
+
+[18:42:36]   Loaded.
+[18:42:36]  Loading plugin: streamer
+[18:42:36] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[18:42:36]   Loaded.
+[18:42:36]  Loaded 2 plugins.
+
+[18:42:36] 
+[18:42:36] Filterscripts
+[18:42:36] ---------------
+[18:42:36]   Loaded 0 filterscripts.
+
+[18:42:36]  
+[18:42:36]  
+[18:42:36]  
+[18:42:36]  ======================================= 
+[18:42:36]  |                                     | 
+[18:42:36]  |        YSI version 3.09.0684        | 
+[18:42:36]  |        By Alex "Y_Less" Cole        | 
+[18:42:36]  |                                     | 
+[18:42:36]  ======================================= 
+[18:42:36]  
+[18:42:36]  
+[18:42:36]  
+[18:42:36] 
+----------------------------------
+[18:42:36]  Iniciando GM test de Roleplay.
+[18:42:36] ----------------------------------
+
+[18:42:36] Number of vehicle models: 0
+[18:43:03] [connection] 127.0.0.1:58230 requests connection cookie.
+[18:43:04] [connection] incoming connection: 127.0.0.1:58230 id: 0
+[18:43:04] [join] Lawliet_Salvatore has joined the server (0:127.0.0.1)
+[18:43:06] [part] Lawliet_Salvatore has left the server (0:2)
+[18:43:45] [connection] 127.0.0.1:50104 requests connection cookie.
+[18:43:46] [connection] incoming connection: 127.0.0.1:50104 id: 0
+[18:43:47] [join] Lawliet_Salvatore has joined the server (0:127.0.0.1)
+[18:43:58] [part] Lawliet_Salvatore has left the server (0:1)
+[18:44:36] [connection] 127.0.0.1:59113 requests connection cookie.
+[18:44:37] [connection] incoming connection: 127.0.0.1:59113 id: 0
+[18:44:38] [join] Lawliet_Salvatore has joined the server (0:127.0.0.1)
+[18:45:01] [part] Lawliet_Salvatore has left the server (0:1)
+[18:45:40] [connection] 127.0.0.1:57228 requests connection cookie.
+[18:45:41] [connection] incoming connection: 127.0.0.1:57228 id: 0
+[18:45:41] [join] Lawliet_Salvatore has joined the server (0:127.0.0.1)
+[18:45:49] [part] Lawliet_Salvatore has left the server (0:1)
+[18:46:41] [connection] 127.0.0.1:55114 requests connection cookie.
+[18:46:42] [connection] incoming connection: 127.0.0.1:55114 id: 0
+[18:46:42] [join] Lawliet_Salvatore has joined the server (0:127.0.0.1)
+[18:46:49] [part] Lawliet_Salvatore has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:47:48] filterscripts = ""  (string)
+[18:47:48] 
+[18:47:48] Server Plugins
+[18:47:48] --------------
+[18:47:48]  Loading plugin: sscanf
+[18:47:48] 
+
+[18:47:48]  ===============================
+
+[18:47:48]       sscanf plugin loaded.     
+
+[18:47:48]          Version:  2.8.3        
+
+[18:47:48]   (c) 2018 Alex "Y_Less" Cole  
+
+[18:47:48]  ===============================
+
+[18:47:48]   Loaded.
+[18:47:48]  Loading plugin: streamer
+[18:47:48] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[18:47:48]   Loaded.
+[18:47:48]  Loaded 2 plugins.
+
+[18:47:48] 
+[18:47:48] Filterscripts
+[18:47:48] ---------------
+[18:47:48]   Loaded 0 filterscripts.
+
+[18:47:48]  
+[18:47:48]  
+[18:47:48]  
+[18:47:48]  ======================================= 
+[18:47:48]  |                                     | 
+[18:47:48]  |        YSI version 3.09.0684        | 
+[18:47:48]  |        By Alex "Y_Less" Cole        | 
+[18:47:48]  |                                     | 
+[18:47:48]  ======================================= 
+[18:47:48]  
+[18:47:48]  
+[18:47:48]  
+[18:47:48] 
+----------------------------------
+[18:47:48]  Iniciando GM test de Roleplay.
+[18:47:48] ----------------------------------
+
+[18:47:48] Number of vehicle models: 0
+[18:48:14] [connection] 127.0.0.1:61630 requests connection cookie.
+[18:48:15] [connection] incoming connection: 127.0.0.1:61630 id: 0
+[18:48:16] [join] Lawliet_Salvatore has joined the server (0:127.0.0.1)
+[18:48:25] [part] Lawliet_Salvatore has left the server (0:1)
+[18:48:53] [connection] 127.0.0.1:54514 requests connection cookie.
+[18:48:54] [connection] incoming connection: 127.0.0.1:54514 id: 0
+[18:48:54] [join] Lawliet_Salvatore has joined the server (0:127.0.0.1)
+[18:49:00] [part] Lawliet_Salvatore has left the server (0:2)
