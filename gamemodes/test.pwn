@@ -8,16 +8,6 @@
 ||===============================================||
 */
 
-//ID staff
-/*
-#Usuario				(0)
-#Ayudante				(1)
-#Moderador				(2)
-#Administrador			(3)
-#Programador			(4)
-#Dueno					(5)
-*/
-
 #include <a_samp>
 #include <streamer>
 #include <sscanf2>
@@ -35,6 +25,14 @@
 #define 				SuccessLogin 				(6)
 
 #define 				User_Path					"/Users/%s.ini"
+
+//ID staff
+#define					Usuario						(0)
+#define					Ayudante					(1)
+#define					Moderador					(2)
+#define					Administrador				(3)
+#define					Programador					(4)
+#define					Dueno						(5)
 
 //Colores
 #define					COLOR_WHITE_T				"{FFFFFF}"
@@ -70,6 +68,7 @@ enum PlayerData
 	Float:PosX,
 	Float:PosY,
 	Float:PosZ,
+	Float:PosA,
 	Skin,
 	VirtualW,
 	Interior
@@ -92,6 +91,7 @@ public LoadUser_data(playerid, name[], value[])
 	INI_Float("PosX", pInfo[playerid][PosX]);
 	INI_Float("PosY", pInfo[playerid][PosY]);
 	INI_Float("PosZ", pInfo[playerid][PosZ]);
+	INI_Float("PosA", pInfo[playerid][PosA]);
 	INI_Int("Skin", pInfo[playerid][Skin]);
 	INI_Int("VirtualW", pInfo[playerid][VirtualW]);
 	INI_Int("Interior", pInfo[playerid][Interior]);
@@ -190,10 +190,11 @@ public OnPlayerDisconnect(playerid, reason)
 	INI_WriteInt(File, "Age", pInfo[playerid][Age]);
 	INI_WriteInt(File, "VIP", pInfo[playerid][VIP]);
 	INI_WriteInt(File, "Admin", pInfo[playerid][Admin]);
-	INI_WriteInt(File, "OnDuty", pInfo[playerid][OnDuty]);
+	INI_WriteInt(File, "OnDuty", 0);
 	INI_WriteFloat(File, "PosX", pInfo[playerid][PosX]);
 	INI_WriteFloat(File, "PosY", pInfo[playerid][PosY]);
 	INI_WriteFloat(File, "PosZ", pInfo[playerid][PosZ]);
+	INI_WriteFloat(File, "PosA", pInfo[playerid][PosA]);
 	INI_WriteInt(File, "Skin", pInfo[playerid][Skin]);
 	INI_WriteInt(File, "VirtualW", pInfo[playerid][VirtualW]);
 	INI_WriteInt(File, "Interior", pInfo[playerid][Interior]);
@@ -227,6 +228,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				INI_WriteFloat(File, "PosX", -2016.4399);
 				INI_WriteFloat(File, "PosY", -79.77140);
 				INI_WriteFloat(File, "PosZ", 35.3203);
+				INI_WriteFloat(File, "PosA", 0);
 				INI_WriteInt(File, "Skin", 60);
 				INI_WriteInt(File, "VirtualW", 0);
 				INI_WriteInt(File, "Interior", 0);
@@ -251,7 +253,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					SetPlayerVirtualWorld(playerid, pInfo[playerid][VirtualW]);
 					SetPlayerInterior(playerid, pInfo[playerid][Interior]);
 					ShowPlayerDialog(playerid, SuccessLogin, DIALOG_STYLE_MSGBOX, ""COLOR_WHITE_T"Listo", ""COLOR_GREEN_T"Has iniciado sesion correctamente.", "Entendido", "");
-					SetSpawnInfo(playerid, 0, pInfo[playerid][Skin], pInfo[playerid][PosX], pInfo[playerid][PosY], pInfo[playerid][PosZ], 1.0, 0, 0, 0, 0, 0, 0);
+					SetSpawnInfo(playerid, 0, pInfo[playerid][Skin], pInfo[playerid][PosX], pInfo[playerid][PosY], pInfo[playerid][PosZ], pInfo[playerid][PosA], 0, 0, 0, 0, 0, 0);
 					SetPlayerSkin(playerid, pInfo[playerid][Skin]);
 					SpawnPlayer(playerid);
 				}
@@ -331,7 +333,7 @@ public OnPlayerCommandReceived(playerid, cmdtext[])
 //Cada vez que un comando se ejecuta
 public OnPlayerCommandPerformed(playerid, cmdtext[], success)
 {
-  	if(!success) SendClientMessage(playerid, COLOR_GREEN, "Living Online Roleplay: {FF0000}[Error 404] {FFFFFF}El Comando que has introducido es incorrecto, use {BFFF00}/ayuda{FFFFFF}.");
+  	if(!success) SendClientMessage(playerid, COLOR_GREEN, "NoJodan Roleplay: {FF0000}[Error 404] {FFFFFF}El Comando que has introducido es incorrecto, use {BFFF00}/ayuda{FFFFFF}.");
 	return 1;
 }
 
@@ -360,6 +362,107 @@ CMD:e(playerid, params[])
 	new string[128];
 	format(string, sizeof(string), "[Entorno]: %s (( %s ))", params, GetPlayerNameEx(playerid));
 	ProxDetector(30.0, playerid, string, COLOR_GREEN, COLOR_GREEN, COLOR_GREEN, COLOR_GREEN, COLOR_GREEN);
+	return 1;
+}
+
+CMD:adminduty(playerid, params[])
+{
+	switch(pInfo[playerid][Admin])
+	{
+		case Usuario:
+		{
+			SendClientMessage(playerid, COLOR_GREEN, ""COLOR_RED_T"[ERROR] No eres miembro del staff para usar este comando.");
+		}
+		case Ayudante:
+		{
+			new string[128];
+			format(string, sizeof(string), "[NoJodan] El ayudante "COLOR_WHITE_T"%s(%i) esta en servicio.", GetPlayerNameEx(playerid), playerid);
+			SendClientMessageToAll(COLOR_GREEN, string);
+			pInfo[playerid][OnDuty] = 1;
+		}
+		case Moderador:
+		{
+			new string[128];
+			format(string, sizeof(string), "[NoJodan] El moderador "COLOR_WHITE_T"%s(%i) esta en servicio.", GetPlayerNameEx(playerid), playerid);
+			SendClientMessageToAll(COLOR_GREEN, string);
+			pInfo[playerid][OnDuty] = 1;
+		}
+		case Administrador:
+		{
+			new string[128];
+			format(string, sizeof(string), "[NoJodan] El administrador "COLOR_WHITE_T"%s(%i) esta en servicio.", GetPlayerNameEx(playerid), playerid);
+			SendClientMessageToAll(COLOR_GREEN, string);
+			pInfo[playerid][OnDuty] = 1;
+		}
+		case Programador:
+		{
+			new string[128];
+			format(string, sizeof(string), "[NoJodan] El programador "COLOR_WHITE_T"%s(%i) esta en servicio.", GetPlayerNameEx(playerid), playerid);
+			SendClientMessageToAll(COLOR_GREEN, string);
+			pInfo[playerid][OnDuty] = 1;
+		}
+		case Dueno:
+		{
+			new string[128];
+			format(string, sizeof(string), "[NoJodan] El dueno "COLOR_WHITE_T"%s(%i) esta en servicio.", GetPlayerNameEx(playerid), playerid);
+			SendClientMessageToAll(COLOR_GREEN, string);
+			pInfo[playerid][OnDuty] = 1;
+		}
+	}
+	return 1;
+}
+
+CMD:adminoffduty(playerid, params[])
+{
+	if(pInfo[playerid][OnDuty] == 1)
+	{
+		switch(pInfo[playerid][Admin])
+		{
+			case Usuario:
+			{
+				SendClientMessage(playerid, COLOR_GREEN, ""COLOR_RED_T"[ERROR] No eres miembro del staff para usar este comando.");
+			}
+			case Ayudante:
+			{
+				new string[128];
+				format(string, sizeof(string), "[NoJodan] El ayudante "COLOR_WHITE_T"%s(%i) esta fuera de servicio.", GetPlayerNameEx(playerid), playerid);
+				SendClientMessageToAll(COLOR_GREEN, string);
+				pInfo[playerid][OnDuty] = 0;
+			}
+			case Moderador:
+			{
+				new string[128];
+				format(string, sizeof(string), "[NoJodan] El moderador "COLOR_WHITE_T"%s(%i) esta fuera de servicio.", GetPlayerNameEx(playerid), playerid);
+				SendClientMessageToAll(COLOR_GREEN, string);
+				pInfo[playerid][OnDuty] = 0;
+			}
+			case Administrador:
+			{
+				new string[128];
+				format(string, sizeof(string), "[NoJodan] El administrador "COLOR_WHITE_T"%s(%i) esta fuera de servicio.", GetPlayerNameEx(playerid), playerid);
+				SendClientMessageToAll(COLOR_GREEN, string);
+				pInfo[playerid][OnDuty] = 0;
+			}
+			case Programador:
+			{
+				new string[128];
+				format(string, sizeof(string), "[NoJodan] El programador "COLOR_WHITE_T"%s(%i) esta fuera de servicio.", GetPlayerNameEx(playerid), playerid);
+				SendClientMessageToAll(COLOR_GREEN, string);
+				pInfo[playerid][OnDuty] = 0;
+			}
+			case Dueno:
+			{
+				new string[128];
+				format(string, sizeof(string), "[NoJodan] El dueno "COLOR_WHITE_T"%s(%i) esta fuera de servicio.", GetPlayerNameEx(playerid), playerid);
+				SendClientMessageToAll(COLOR_GREEN, string);
+				pInfo[playerid][OnDuty] = 0;
+			}
+		}
+	}
+	else
+	{
+		SendClientMessage(playerid, COLOR_GREEN, ""COLOR_RED_T"No estas en modo administrativo o no puedes usar este comando.");
+	}
 	return 1;
 }
 
