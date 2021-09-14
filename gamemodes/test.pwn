@@ -1,7 +1,7 @@
-//****************************Test Roleplay****************************
+//****************************NoJodan Roleplay****************************
 /*
 ||===============================================||
-|| Nombre: Test Roleplay		                 ||
+|| Nombre: NoJodan Roleplay		                 ||
 || Programador: Lawliet                          ||
 || Mapper: 			                             ||
 || Version: 0.1                                  ||
@@ -575,10 +575,10 @@ public KickInTime(playerid)
 	return Kick(playerid);
 }
 
-//****************************Test Roleplay****************************
+//****************************NoJodan Roleplay****************************
 /*
 ||===============================================||
-|| Nombre: Test Roleplay		                 ||
+|| Nombre: NoJodan Roleplay		                 ||
 || Programador: Lawliet                          ||
 || Mapper: 			                             ||
 || Version: 0.1                                  ||
