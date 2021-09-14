@@ -78,6 +78,8 @@ enum PlayerData
 	Skin,
 	VirtualW,
 	Interior,
+	Weapon[13],
+	Ammo[13],
 	TriesL,
 	TriesR
 };
@@ -103,6 +105,14 @@ public LoadUser_data(playerid, name[], value[])
 	INI_Int("Skin", pInfo[playerid][Skin]);
 	INI_Int("VirtualW", pInfo[playerid][VirtualW]);
 	INI_Int("Interior", pInfo[playerid][Interior]);
+	for(new i = 0; i < 13; i++)
+	{
+		new wInfo[24], aInfo[24];
+		format(wInfo, sizeof(wInfo), "Weapon%d", i);
+		format(aInfo, sizeof(aInfo), "Ammo%d", i);
+		INI_Int(wInfo, pInfo[playerid][Weapon][i]);
+		INI_Int(aInfo, pInfo[playerid][Ammo][i]);
+	}
 	return 1;
 }
 
@@ -206,6 +216,15 @@ public OnPlayerDisconnect(playerid, reason)
 		INI_WriteInt(File, "Skin", pInfo[playerid][Skin]);
 		INI_WriteInt(File, "VirtualW", pInfo[playerid][VirtualW]);
 		INI_WriteInt(File, "Interior", pInfo[playerid][Interior]);
+		for(new i = 0; i < 13; i++)
+		{
+			new wInfo[24], aInfo[24];
+			GetPlayerWeaponData(playerid, i, pInfo[playerid][Weapon][i], pInfo[playerid][Ammo][i]);
+			format(wInfo, sizeof(wInfo), "Weapon%d", i);
+			format(aInfo, sizeof(aInfo), "Ammo%d", i);
+			INI_WriteInt(File, wInfo, pInfo[playerid][Weapon][i]);
+			INI_WriteInt(File, aInfo, pInfo[playerid][Ammo][i]);
+		}
 		INI_Close(File);
 	}
 	return 1;
@@ -277,6 +296,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					ShowPlayerDialog(playerid, SuccessLogin, DIALOG_STYLE_MSGBOX, ""COLOR_WHITE_T"Listo", ""COLOR_GREEN_T"Has iniciado sesion correctamente.", "Entendido", "");
 					SetSpawnInfo(playerid, 0, pInfo[playerid][Skin], pInfo[playerid][PosX], pInfo[playerid][PosY], pInfo[playerid][PosZ], pInfo[playerid][PosA], 0, 0, 0, 0, 0, 0);
 					SpawnPlayer(playerid);
+					for(new i = 0; i < 13; i++)
+					{
+						GivePlayerWeapon(playerid, pInfo[playerid][Weapon][i], pInfo[playerid][Ammo][i]);
+					}
 					SetPlayerSkin(playerid, pInfo[playerid][Skin]);
 				}
 				else
@@ -511,6 +534,11 @@ CMD:adminoffduty(playerid, params[])
 		SendClientMessage(playerid, COLOR_GREEN, ""COLOR_RED_T"No estas en modo administrativo o no puedes usar este comando.");
 	}
 	return 1;
+}
+
+CMD:dararma(playerid, params[])
+{
+	GivePlayerWeapon(playerid, 24, 15);
 }
 
 //Funciones
