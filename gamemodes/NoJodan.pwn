@@ -2,7 +2,7 @@
 /*
 ||===============================================||
 || Nombre: NoJodan Roleplay		                 ||
-|| Programador: Lawliet                          ||
+|| Programador: Lawliet / Ryuzen                 ||
 || Mapper: 			                             ||
 || Version: 0.1 Alpha                            ||
 ||===============================================||
@@ -602,7 +602,7 @@ public KickInTime(playerid)
 /*
 ||===============================================||
 || Nombre: NoJodan Roleplay		                 ||
-|| Programador: Lawliet                          ||
+|| Programador: Lawliet / Ryuzen                 ||
 || Mapper: 			                             ||
 || Version: 0.1 Alpha                            ||
 ||===============================================||
