@@ -4,7 +4,7 @@
 || Nombre: NoJodan Roleplay		                 ||
 || Programador: Lawliet                          ||
 || Mapper: 			                             ||
-|| Version: 0.1                                  ||
+|| Version: 0.1 Alpha                            ||
 ||===============================================||
 */
 
@@ -425,7 +425,7 @@ CMD:e(playerid, params[])
 	return 1;
 }
 
-CMD:adminduty(playerid, params[])
+CMD:adminduty(playerid)
 {
 	switch(pInfo[playerid][Admin])
 	{
@@ -477,7 +477,7 @@ CMD:adminduty(playerid, params[])
 	return 1;
 }
 
-CMD:adminoffduty(playerid, params[])
+CMD:adminoffduty(playerid)
 {
 	if(pInfo[playerid][OnDuty] == 1)
 	{
@@ -534,11 +534,6 @@ CMD:adminoffduty(playerid, params[])
 		SendClientMessage(playerid, COLOR_GREEN, ""COLOR_RED_T"No estas en modo administrativo o no puedes usar este comando.");
 	}
 	return 1;
-}
-
-CMD:dararma(playerid, params[])
-{
-	GivePlayerWeapon(playerid, 24, 15);
 }
 
 //Funciones
@@ -609,6 +604,6 @@ public KickInTime(playerid)
 || Nombre: NoJodan Roleplay		                 ||
 || Programador: Lawliet                          ||
 || Mapper: 			                             ||
-|| Version: 0.1                                  ||
+|| Version: 0.1 Alpha                            ||
 ||===============================================||
 */
