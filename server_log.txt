@@ -1396,3 +1396,72 @@ v0.3.7-R2, (C)2005-2015 SA-MP Team
 [12:25:58] [CMD] [Jhon Rincon]: /tp 0
 [12:26:11] [CMD] [Jhon Rincon]: /traer 0
 [12:26:22] [part] Jhon_Rincon has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[16:05:13] filterscripts = ""  (string)
+[16:05:13] 
+[16:05:13] Server Plugins
+[16:05:13] --------------
+[16:05:13]  Loading plugin: sscanf
+[16:05:13] 
+
+[16:05:13]  ===============================
+
+[16:05:13]       sscanf plugin loaded.     
+
+[16:05:13]          Version:  2.8.3        
+
+[16:05:13]   (c) 2018 Alex "Y_Less" Cole  
+
+[16:05:13]  ===============================
+
+[16:05:13]   Loaded.
+[16:05:13]  Loading plugin: streamer
+[16:05:13] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[16:05:13]   Loaded.
+[16:05:13]  Loaded 2 plugins.
+
+[16:05:13] 
+[16:05:13] Filterscripts
+[16:05:13] ---------------
+[16:05:13]   Loaded 0 filterscripts.
+
+[16:05:13]  
+[16:05:13]  
+[16:05:13]  
+[16:05:13]  ======================================= 
+[16:05:13]  |                                     | 
+[16:05:13]  |        YSI version 3.09.0684        | 
+[16:05:13]  |        By Alex "Y_Less" Cole        | 
+[16:05:13]  |                                     | 
+[16:05:13]  ======================================= 
+[16:05:13]  
+[16:05:13]  
+[16:05:13]  
+[16:05:13] 
+----------------------------------
+[16:05:13]  Iniciando GM test de Roleplay.
+[16:05:13] ----------------------------------
+
+[16:05:13] Number of vehicle models: 0
+[16:05:44] [connection] 127.0.0.1:54391 requests connection cookie.
+[16:05:45] [connection] incoming connection: 127.0.0.1:54391 id: 0
+[16:05:45] [join] Jhon_Rincon has joined the server (0:127.0.0.1)
+[16:06:00] [CMD] [Jhon Rincon]: /adminduty
+[16:06:04] [CMD] [Jhon Rincon]: /mandarpos
+[16:06:07] [CMD] [Jhon Rincon]: /mandarpos 1
+[16:06:12] [CMD] [Jhon Rincon]: /mandarpos 0 0 0 0
+[16:06:18] [CMD] [Jhon Rincon]: /mandarpos 0 0 0 0 0
+[16:06:30] [CMD] [Jhon Rincon]: /mandarpos 9 a9sd  sad asd
+[16:06:42] [CMD] [Jhon Rincon]: /mandarpos 0 9 9 3
+[16:07:01] [part] Jhon_Rincon has left the server (0:1)

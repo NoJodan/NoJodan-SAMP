@@ -543,11 +543,13 @@ CMD:tp(playerid, params[])
     {
         if(!sscanf(params, "d", params[0]))
         {
-            new Float:x, Float:y, Float:z;
+            new Float:x, Float:y, Float:z, string[128];
             if(IsPlayerConnected(params[0]))
             {
                 GetPlayerPos(params[0], x, y, z);
                 SetPlayerPos(playerid, x, y, z+5);
+				format(string, sizeof(string), "Te has teletransportado a la id %i", params[0]);
+				SendClientMessage(playerid, COLOR_GREEN, string);
             }
             else
             {
@@ -572,11 +574,13 @@ CMD:traer(playerid, params[])
     {
         if(!sscanf(params, "d", params[0]))
         {
-            new Float:x, Float:y, Float:z;
+            new Float:x, Float:y, Float:z, string[128];
             if(IsPlayerConnected(params[0]))
             {
                 GetPlayerPos(playerid, x, y, z);
                 SetPlayerPos(params[0], x, y, z+5);
+				format(string, sizeof(string), "Has traido al id %i", params[0]);
+				SendClientMessage(playerid, COLOR_GREEN, string);
             }
             else
             {
@@ -586,6 +590,97 @@ CMD:traer(playerid, params[])
         else
         {
             SendClientMessage(playerid, COLOR_GREEN, "Uso: /traer <ID>");
+        }
+    }
+    else
+    {
+        SendClientMessage(playerid, COLOR_RED, "No estas en modo administrador o no tienes permisos para esto.");
+    }
+    return 1;
+}
+
+CMD:mandarpos(playerid, params[])
+{
+	if(pInfo[playerid][Admin] > 1 && pInfo[playerid][OnDuty] == 1)
+	{
+		if(!sscanf(params, "dfff", params[0], params[1], params[2], params[3]))
+		{
+			if(IsPlayerConnected(params[0]))
+			{
+				new string[128];
+				SetPlayerPos(params[0], params[1], params[2], params[3]);
+				format(string, sizeof(string), "Has mandado la id %i a las cordenadas %f, %f, %f.", params[0], params[1], params[2], params[3]);
+				SendClientMessage(playerid, COLOR_GREEN, string);
+			}
+			else
+			{
+				SendClientMessage(playerid, COLOR_RED, "El jugador no esta conectado");
+			}
+		}
+		else
+		{
+			SendClientMessage(playerid, COLOR_GREEN, "Uso: /mandarpos <ID> <PosX> <PosY> <PosZ>");
+		}
+	}
+	else
+    {
+        SendClientMessage(playerid, COLOR_RED, "No estas en modo administrador o no tienes permisos para esto.");
+    }
+    return 1;
+}
+
+CMD:elevar(playerid, params[])
+{
+    if(pInfo[playerid][Admin] > 1 && pInfo[playerid][OnDuty] == 1)
+    {
+        if(!sscanf(params, "d", params[0]))
+        {
+            new Float:x, Float:y, Float:z, string[128];
+            if(IsPlayerConnected(params[0]))
+            {
+                GetPlayerPos(params[0], x, y, z);
+                SetPlayerPos(params[0], x, y, z+50);
+				format(string, sizeof(string), "Has troleado al id %i", params[0]);
+				SendClientMessage(playerid, COLOR_GREEN, string);
+            }
+            else
+            {
+                SendClientMessage(playerid, COLOR_RED, "El jugador no esta conectado");
+            }
+        }
+        else
+        {
+            SendClientMessage(playerid, COLOR_GREEN, "Uso: /elevar <ID>");
+        }
+    }
+    else
+    {
+        SendClientMessage(playerid, COLOR_RED, "No estas en modo administrador o no tienes permisos para esto.");
+    }
+    return 1;
+}
+
+CMD:dararma(playerid, params[])
+{
+    if(pInfo[playerid][Admin] > 1 && pInfo[playerid][OnDuty] == 1)
+    {
+        if(!sscanf(params, "ddd", params[0], params[1], params[2]))
+        {
+            if(IsPlayerConnected(params[0]))
+            {
+				new string[128];
+                GivePlayerWeapon(params[0], params[1], params[2]);
+				format(string, sizeof(string), "Has dado un arma al id %i", params[0]);
+				SendClientMessage(playerid, COLOR_GREEN, string);
+            }
+            else
+            {
+                SendClientMessage(playerid, COLOR_RED, "El jugador no esta conectado");
+            }
+        }
+        else
+        {
+            SendClientMessage(playerid, COLOR_GREEN, "Uso: /dararma <ID> <arma> <municion>");
         }
     }
     else
