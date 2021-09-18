@@ -296,6 +296,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					ShowPlayerDialog(playerid, SuccessLogin, DIALOG_STYLE_MSGBOX, ""COLOR_WHITE_T"Listo", ""COLOR_GREEN_T"Has iniciado sesion correctamente.", "Entendido", "");
 					SetSpawnInfo(playerid, 0, pInfo[playerid][Skin], pInfo[playerid][PosX], pInfo[playerid][PosY], pInfo[playerid][PosZ], pInfo[playerid][PosA], 0, 0, 0, 0, 0, 0);
 					SpawnPlayer(playerid);
+					SetPlayerSkin(playerid, pInfo[playerid][Skin]);
 					for(new i = 0; i < 13; i++)
 					{
 						GivePlayerWeapon(playerid, pInfo[playerid][Weapon][i], pInfo[playerid][Ammo][i]);
@@ -534,6 +535,64 @@ CMD:adminoffduty(playerid)
 		SendClientMessage(playerid, COLOR_GREEN, ""COLOR_RED_T"No estas en modo administrativo o no puedes usar este comando.");
 	}
 	return 1;
+}
+
+CMD:tp(playerid, params[])
+{
+    if(pInfo[playerid][Admin] > 1 && pInfo[playerid][OnDuty] == 1)
+    {
+        if(!sscanf(params, "d", params[0]))
+        {
+            new Float:x, Float:y, Float:z;
+            if(IsPlayerConnected(params[0]))
+            {
+                GetPlayerPos(params[0], x, y, z);
+                SetPlayerPos(playerid, x, y, z+5);
+            }
+            else
+            {
+                SendClientMessage(playerid, COLOR_RED, "El jugador no esta conectado");
+            }
+        }
+        else
+        {
+            SendClientMessage(playerid, COLOR_GREEN, "Uso: /tp <ID>");
+        }
+    }
+    else
+    {
+        SendClientMessage(playerid, COLOR_RED, "No estas en modo administrador o no tienes permisos para esto.");
+    }
+    return 1;
+}
+
+CMD:traer(playerid, params[])
+{
+    if(pInfo[playerid][Admin] > 1 && pInfo[playerid][OnDuty] == 1)
+    {
+        if(!sscanf(params, "d", params[0]))
+        {
+            new Float:x, Float:y, Float:z;
+            if(IsPlayerConnected(params[0]))
+            {
+                GetPlayerPos(playerid, x, y, z);
+                SetPlayerPos(params[0], x, y, z+5);
+            }
+            else
+            {
+                SendClientMessage(playerid, COLOR_RED, "El jugador no esta conectado");
+            }
+        }
+        else
+        {
+            SendClientMessage(playerid, COLOR_GREEN, "Uso: /traer <ID>");
+        }
+    }
+    else
+    {
+        SendClientMessage(playerid, COLOR_RED, "No estas en modo administrador o no tienes permisos para esto.");
+    }
+    return 1;
 }
 
 //Funciones

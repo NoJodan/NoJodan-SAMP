@@ -1316,3 +1316,83 @@ v0.3.7-R2, (C)2005-2015 SA-MP Team
 [10:45:44] [connection] incoming connection: 127.0.0.1:51835 id: 0
 [10:45:44] [join] Lawliet_Salvatore has joined the server (0:127.0.0.1)
 [10:45:54] [part] Lawliet_Salvatore has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[12:18:43] filterscripts = ""  (string)
+[12:18:43] 
+[12:18:43] Server Plugins
+[12:18:43] --------------
+[12:18:43]  Loading plugin: sscanf
+[12:18:43] 
+
+[12:18:43]  ===============================
+
+[12:18:43]       sscanf plugin loaded.     
+
+[12:18:43]          Version:  2.8.3        
+
+[12:18:43]   (c) 2018 Alex "Y_Less" Cole  
+
+[12:18:43]  ===============================
+
+[12:18:43]   Loaded.
+[12:18:43]  Loading plugin: streamer
+[12:18:43] 
+
+*** Streamer Plugin v2.9.5 by Incognito loaded ***
+
+[12:18:43]   Loaded.
+[12:18:43]  Loaded 2 plugins.
+
+[12:18:43] 
+[12:18:43] Filterscripts
+[12:18:43] ---------------
+[12:18:43]   Loaded 0 filterscripts.
+
+[12:18:44]  
+[12:18:44]  
+[12:18:44]  
+[12:18:44]  ======================================= 
+[12:18:44]  |                                     | 
+[12:18:44]  |        YSI version 3.09.0684        | 
+[12:18:44]  |        By Alex "Y_Less" Cole        | 
+[12:18:44]  |                                     | 
+[12:18:44]  ======================================= 
+[12:18:44]  
+[12:18:44]  
+[12:18:44]  
+[12:18:44] 
+----------------------------------
+[12:18:44]  Iniciando GM test de Roleplay.
+[12:18:44] ----------------------------------
+
+[12:18:44] Number of vehicle models: 0
+[12:19:29] [connection] 127.0.0.1:50428 requests connection cookie.
+[12:19:30] [connection] incoming connection: 127.0.0.1:50428 id: 0
+[12:19:30] [join] Jhon_Rincon has joined the server (0:127.0.0.1)
+[12:19:34] *** YSI Error: INI_Open could not find or create file /Users/Jhon_Rincon.ini
+[12:19:59] [CMD] [Jhon Rincon]: /tp
+[12:20:06] [CMD] [Jhon Rincon]: /adminduty
+[12:20:08] [part] Jhon_Rincon has left the server (0:1)
+[12:24:00] [connection] 127.0.0.1:63181 requests connection cookie.
+[12:24:01] [connection] incoming connection: 127.0.0.1:63181 id: 0
+[12:24:01] [join] Jhon_Rincon has joined the server (0:127.0.0.1)
+[12:24:17] [part] Jhon_Rincon has left the server (0:1)
+[12:24:40] [connection] 127.0.0.1:57484 requests connection cookie.
+[12:24:41] [connection] incoming connection: 127.0.0.1:57484 id: 0
+[12:24:41] [join] Jhon_Rincon has joined the server (0:127.0.0.1)
+[12:24:52] [part] Jhon_Rincon has left the server (0:1)
+[12:25:43] [connection] 127.0.0.1:63785 requests connection cookie.
+[12:25:44] [connection] incoming connection: 127.0.0.1:63785 id: 0
+[12:25:44] [join] Jhon_Rincon has joined the server (0:127.0.0.1)
+[12:25:55] [CMD] [Jhon Rincon]: /adminduty
+[12:25:58] [CMD] [Jhon Rincon]: /tp 0
+[12:26:11] [CMD] [Jhon Rincon]: /traer 0
+[12:26:22] [part] Jhon_Rincon has left the server (0:1)
