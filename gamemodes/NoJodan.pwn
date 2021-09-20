@@ -428,52 +428,59 @@ CMD:e(playerid, params[])
 
 CMD:adminduty(playerid)
 {
-	switch(pInfo[playerid][Admin])
+	if(pInfo[playerid][OnDuty] = 0)
 	{
-		case Usuario:
+		switch(pInfo[playerid][Admin])
 		{
-			SendClientMessage(playerid, COLOR_GREEN, ""COLOR_RED_T"[ERROR] No eres miembro del staff para usar este comando.");
+			case Usuario:
+			{
+				SendClientMessage(playerid, COLOR_GREEN, ""COLOR_RED_T"[ERROR] No eres miembro del staff para usar este comando.");
+			}
+			case Ayudante:
+			{
+				new string[128];
+				format(string, sizeof(string), "[NoJodan] El ayudante "COLOR_WHITE_T"%s(%i) esta en servicio.", GetPlayerNameEx(playerid), playerid);
+				SendClientMessageToAll(COLOR_GREEN, string);
+				SetPlayerColor(playerid, COLOR_AYUDANTE);
+				pInfo[playerid][OnDuty] = 1;
+			}
+			case Moderador:
+			{
+				new string[128];
+				format(string, sizeof(string), "[NoJodan] El moderador "COLOR_WHITE_T"%s(%i) esta en servicio.", GetPlayerNameEx(playerid), playerid);
+				SendClientMessageToAll(COLOR_GREEN, string);
+				SetPlayerColor(playerid, COLOR_MODERADOR);
+				pInfo[playerid][OnDuty] = 1;
+			}
+			case Administrador:
+			{
+				new string[128];
+				format(string, sizeof(string), "[NoJodan] El administrador "COLOR_WHITE_T"%s(%i) esta en servicio.", GetPlayerNameEx(playerid), playerid);
+				SendClientMessageToAll(COLOR_GREEN, string);
+				SetPlayerColor(playerid, COLOR_ADMINISTRADOR);
+				pInfo[playerid][OnDuty] = 1;
+			}
+			case Programador:
+			{
+				new string[128];
+				format(string, sizeof(string), "[NoJodan] El programador "COLOR_WHITE_T"%s(%i) esta en servicio.", GetPlayerNameEx(playerid), playerid);
+				SendClientMessageToAll(COLOR_GREEN, string);
+				SetPlayerColor(playerid, COLOR_PROGRAMADOR);
+				pInfo[playerid][OnDuty] = 1;
+			}
+			case Dueno:
+			{
+				new string[128];
+				format(string, sizeof(string), "[NoJodan] El dueno "COLOR_WHITE_T"%s(%i) esta en servicio.", GetPlayerNameEx(playerid), playerid);
+				SendClientMessageToAll(COLOR_GREEN, string);
+				SetPlayerColor(playerid, COLOR_DUEÑO);
+				pInfo[playerid][OnDuty] = 1;
+			}
 		}
-		case Ayudante:
-		{
-			new string[128];
-			format(string, sizeof(string), "[NoJodan] El ayudante "COLOR_WHITE_T"%s(%i) esta en servicio.", GetPlayerNameEx(playerid), playerid);
-			SendClientMessageToAll(COLOR_GREEN, string);
-			SetPlayerColor(playerid, COLOR_AYUDANTE);
-			pInfo[playerid][OnDuty] = 1;
-		}
-		case Moderador:
-		{
-			new string[128];
-			format(string, sizeof(string), "[NoJodan] El moderador "COLOR_WHITE_T"%s(%i) esta en servicio.", GetPlayerNameEx(playerid), playerid);
-			SendClientMessageToAll(COLOR_GREEN, string);
-			SetPlayerColor(playerid, COLOR_MODERADOR);
-			pInfo[playerid][OnDuty] = 1;
-		}
-		case Administrador:
-		{
-			new string[128];
-			format(string, sizeof(string), "[NoJodan] El administrador "COLOR_WHITE_T"%s(%i) esta en servicio.", GetPlayerNameEx(playerid), playerid);
-			SendClientMessageToAll(COLOR_GREEN, string);
-			SetPlayerColor(playerid, COLOR_ADMINISTRADOR);
-			pInfo[playerid][OnDuty] = 1;
-		}
-		case Programador:
-		{
-			new string[128];
-			format(string, sizeof(string), "[NoJodan] El programador "COLOR_WHITE_T"%s(%i) esta en servicio.", GetPlayerNameEx(playerid), playerid);
-			SendClientMessageToAll(COLOR_GREEN, string);
-			SetPlayerColor(playerid, COLOR_PROGRAMADOR);
-			pInfo[playerid][OnDuty] = 1;
-		}
-		case Dueno:
-		{
-			new string[128];
-			format(string, sizeof(string), "[NoJodan] El dueno "COLOR_WHITE_T"%s(%i) esta en servicio.", GetPlayerNameEx(playerid), playerid);
-			SendClientMessageToAll(COLOR_GREEN, string);
-			SetPlayerColor(playerid, COLOR_DUEÑO);
-			pInfo[playerid][OnDuty] = 1;
-		}
+	}
+	else
+	{
+		SendClientMessage(playerid, COLOR_RED, "Ya estas en modo administrativo.");
 	}
 	return 1;
 }
