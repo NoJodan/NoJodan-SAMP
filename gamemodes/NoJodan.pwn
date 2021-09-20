@@ -570,7 +570,7 @@ CMD:tp(playerid, params[])
 
 CMD:traer(playerid, params[])
 {
-    if(pInfo[playerid][Admin] > 1 && pInfo[playerid][OnDuty] == 1)
+    if(pInfo[playerid][Admin] > 2 && pInfo[playerid][OnDuty] == 1)
     {
         if(!sscanf(params, "d", params[0]))
         {
@@ -601,7 +601,7 @@ CMD:traer(playerid, params[])
 
 CMD:mandarpos(playerid, params[])
 {
-	if(pInfo[playerid][Admin] > 1 && pInfo[playerid][OnDuty] == 1)
+	if(pInfo[playerid][Admin] > 2 && pInfo[playerid][OnDuty] == 1)
 	{
 		if(!sscanf(params, "dfff", params[0], params[1], params[2], params[3]))
 		{
@@ -631,7 +631,7 @@ CMD:mandarpos(playerid, params[])
 
 CMD:elevar(playerid, params[])
 {
-    if(pInfo[playerid][Admin] > 1 && pInfo[playerid][OnDuty] == 1)
+    if(pInfo[playerid][Admin] > 4 && pInfo[playerid][OnDuty] == 1)
     {
         if(!sscanf(params, "d", params[0]))
         {
@@ -662,7 +662,7 @@ CMD:elevar(playerid, params[])
 
 CMD:dararma(playerid, params[])
 {
-    if(pInfo[playerid][Admin] > 1 && pInfo[playerid][OnDuty] == 1)
+    if(pInfo[playerid][Admin] > 3 && pInfo[playerid][OnDuty] == 1)
     {
         if(!sscanf(params, "ddd", params[0], params[1], params[2]))
         {
@@ -692,7 +692,7 @@ CMD:dararma(playerid, params[])
 
 CMD:borrararmas(playerid, params[])
 {
-    if(pInfo[playerid][Admin] > 1 && pInfo[playerid][OnDuty] == 1)
+    if(pInfo[playerid][Admin] > 3 && pInfo[playerid][OnDuty] == 1)
     {
         if(!sscanf(params, "d", params[0]))
         {
@@ -712,6 +712,83 @@ CMD:borrararmas(playerid, params[])
         {
             SendClientMessage(playerid, COLOR_GREEN, "Uso: /borrararmas <ID>");
         }
+    }
+    else
+    {
+        SendClientMessage(playerid, COLOR_RED, "No estas en modo administrador o no tienes permisos para esto.");
+    }
+    return 1;
+}
+
+CMD:darvida(playerid, params[])
+{
+	if(pInfo[playerid][Admin] > 2 && pInfo[playerid][OnDuty] == 1)
+    {
+        if(!sscanf(params, "d", params[0]))
+        {
+            if(IsPlayerConnected(params[0]))
+            {
+				new string[128];
+                SetPlayerHealth(params[0], 100);
+				format(string, sizeof(string), "Le diste salud al id %i", params[0]);
+				SendClientMessage(playerid, COLOR_GREEN, string);
+            }
+            else
+            {
+                SendClientMessage(playerid, COLOR_RED, "El jugador no esta conectado");
+            }
+        }
+        else
+        {
+            SendClientMessage(playerid, COLOR_GREEN, "Uso: /darvida <ID>");
+        }
+    }
+    else
+    {
+        SendClientMessage(playerid, COLOR_RED, "No estas en modo administrador o no tienes permisos para esto.");
+    }
+    return 1;
+}
+
+CMD:darchaleco(playerid, params[])
+{
+	if(pInfo[playerid][Admin] > 2 && pInfo[playerid][OnDuty] == 1)
+    {
+        if(!sscanf(params, "d", params[0]))
+        {
+            if(IsPlayerConnected(params[0]))
+            {
+				new string[128];
+                SetPlayerArmour(params[0], 100);
+				format(string, sizeof(string), "Le diste chaleco al id %i", params[0]);
+				SendClientMessage(playerid, COLOR_GREEN, string);
+            }
+            else
+            {
+                SendClientMessage(playerid, COLOR_RED, "El jugador no esta conectado");
+            }
+        }
+        else
+        {
+            SendClientMessage(playerid, COLOR_GREEN, "Uso: /darvida <ID>");
+        }
+    }
+    else
+    {
+        SendClientMessage(playerid, COLOR_RED, "No estas en modo administrador o no tienes permisos para esto.");
+    }
+    return 1;
+}
+
+CMD:inmortal(playerid)
+{
+	if(pInfo[playerid][Admin] > 3 && pInfo[playerid][OnDuty] == 1)
+    {
+		new string[128];
+        SetPlayerHealth(playerid, 1000);
+		SetPlayerArmour(playerid, 1000);
+		format(string, sizeof(string), "Ahora eres inmortal %i.", playerid);
+		SendClientMessage(playerid, COLOR_GREEN, string);
     }
     else
     {
