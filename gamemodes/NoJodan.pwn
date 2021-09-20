@@ -690,6 +690,36 @@ CMD:dararma(playerid, params[])
     return 1;
 }
 
+CMD:borrararmas(playerid, params[])
+{
+    if(pInfo[playerid][Admin] > 1 && pInfo[playerid][OnDuty] == 1)
+    {
+        if(!sscanf(params, "d", params[0]))
+        {
+            if(IsPlayerConnected(params[0]))
+            {
+				new string[128];
+                ResetPlayerWeapons(params[0]);
+				format(string, sizeof(string), "Has reseteado las armas del id %i", params[0]);
+				SendClientMessage(playerid, COLOR_GREEN, string);
+            }
+            else
+            {
+                SendClientMessage(playerid, COLOR_RED, "El jugador no esta conectado");
+            }
+        }
+        else
+        {
+            SendClientMessage(playerid, COLOR_GREEN, "Uso: /borrararmas <ID>");
+        }
+    }
+    else
+    {
+        SendClientMessage(playerid, COLOR_RED, "No estas en modo administrador o no tienes permisos para esto.");
+    }
+    return 1;
+}
+
 //Funciones
 forward ProxDetector(Float:radi, playerid, str[], col1, col2, col3, col4, col5);
 public ProxDetector(Float:radi, playerid, str[], col1, col2, col3, col4, col5)
